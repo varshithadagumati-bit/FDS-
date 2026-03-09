@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample dataset
+data = {
+    "Marks": [85, 90, 78, 92, 88, 76, 95, 89, 84]
+}
+
+df = pd.DataFrame(data)
+
+# Histogram
+plt.figure()
+plt.hist(df["Marks"], bins=5)
+plt.title("Histogram of Marks")
+plt.xlabel("Marks")
+plt.ylabel("Frequency")
+plt.show()
+
+# Box Plot
+plt.figure()
+sns.boxplot(y=df["Marks"])
+plt.title("Box Plot of Marks")
+plt.show()
