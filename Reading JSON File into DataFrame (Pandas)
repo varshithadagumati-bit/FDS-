@@ -1,0 +1,21 @@
+{
+  "students": [
+    {"name": "John", "age": 21, "marks": 85},
+    {"name": "Sara", "age": 20, "marks": 90},
+    {"name": "Mike", "age": 22, "marks": 78}
+  ]
+}
+
+//python code
+
+import pandas as pd
+import json
+
+# Load JSON file
+with open("data.json") as f:
+    data = json.load(f)
+
+# Convert to DataFrame
+df = pd.json_normalize(data["students"])
+
+print(df)
