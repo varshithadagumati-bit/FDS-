@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample dataset
+data = {
+    "StudyHours": [1,2,3,4,5,6,7,8],
+    "Marks": [35,40,50,55,65,70,80,90]
+}
+
+df = pd.DataFrame(data)
+
+# Scatter Plot
+plt.scatter(df["StudyHours"], df["Marks"])
+plt.title("Study Hours vs Marks")
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.show()
+
+# Correlation
+corr = df["StudyHours"].corr(df["Marks"])
+print("Correlation Coefficient:", corr)
