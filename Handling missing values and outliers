@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+
+# Sample dataset with missing values
+data = {
+    "Marks": [85, 90, None, 92, 88, None, 200]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Data:")
+print(df)
+
+# Handling missing values (fill with mean)
+df["Marks"].fillna(df["Marks"].mean(), inplace=True)
+
+print("\nAfter Filling Missing Values:")
+print(df)
+
+# Detect outliers using IQR method
+Q1 = df["Marks"].quantile(0.25)
+Q3 = df["Marks"].quantile(0.75)
+IQR = Q3 - Q1
+
+lower = Q1 - 1.5 * IQR
+upper = Q3 + 1.5 * IQR
+
+# Remove outliers
+df_filtered = df[(df["Marks"] >= lower) & (df["Marks"] <= upper)]
+
+print("\nData After Removing Outliers:")
+print(df_filtered)
