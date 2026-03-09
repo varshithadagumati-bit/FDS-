@@ -1,0 +1,24 @@
+import pandas as pd
+
+data = {
+    "Marks": [85, 90, 78, 92, 88, 76, 95]
+}
+
+df = pd.DataFrame(data)
+
+# Mean
+mean = df["Marks"].mean()
+
+# Median
+median = df["Marks"].median()
+
+# Mode
+mode = df["Marks"].mode()[0]
+
+# Standard Deviation
+std = df["Marks"].std()
+
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)
+print("Standard Deviation:", std)
